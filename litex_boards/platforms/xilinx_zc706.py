@@ -46,9 +46,9 @@ _io = [
     #("user_led", 3, Pins("Y21"), IOStandard("LVCMOS25")), # GPIO_LED_LEFT
 
     # Buttons
-    ("user_btn", 0, Pins("AK25"), IOStandard("LVCMOS25")), # GPIO_SW_LEFT
+    ("user_btn", 0, Pins("R27"),  IOStandard("LVCMOS25")), # GPIO_SW_RIGHT
     ("user_btn", 1, Pins("K15"),  IOStandard("LVCMOS15")), # GPIO_SW_CENTER
-    ("user_btn", 2, Pins("R27"),  IOStandard("LVCMOS25")), # GPIO_SW_RIGHT
+    ("user_btn", 2, Pins("AK25"), IOStandard("LVCMOS25")), # GPIO_SW_LEFT
 
     # Switches
     ("user_dip", 0, Pins("AB17"), IOStandard("LVCMOS25")), # GPIO_DIP_SW0
