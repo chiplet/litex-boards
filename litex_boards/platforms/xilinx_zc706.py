@@ -1,6 +1,9 @@
 #
 # This file is part of LiteX-Boards.
 #
+# Copyright (c) 2019 Michael Betz <michibetz@gmail.com>
+# Copyright (c) 2020 Fei Gao <feig@princeton.edu>
+# Copyright (c) 2020 Florent Kermarrec <florent@enjoy-digital.fr>
 # Copyright (c) 2022 Verneri Hirvonen <verneri.hirvonen@aalto.fi>
 # SPDX-License-Identifier: BSD-2-Clause
 
@@ -70,28 +73,23 @@ _io = [
         Subsignal("ras_n",   Pins("H11"), IOStandard("SSTL15")),
         Subsignal("cas_n",   Pins("E7"), IOStandard("SSTL15")),
         Subsignal("we_n",    Pins("F7"), IOStandard("SSTL15")),
-        Subsignal("cs_n",    Pins("J11 H8"), IOStandard("SSTL15")),
-        Subsignal("dm",      Pins("J3 F2 E1 C2 L12 G14 C16 C11"), IOStandard("SSTL15")),
+        Subsignal("cs_n",    Pins("J11"), IOStandard("SSTL15")),
+        Subsignal("dm",      Pins("J3 F2 E1 C2"), IOStandard("SSTL15")),
         Subsignal("dq",      Pins(
-            "L1  L2  K5  J4  K1  L3  J5  K6",
-            "G6  H4  H6  H3  G1  H2  G5  G4",
-            "E2  E3  D4  E5  F4  F3  D1  D3",
-            "A2  B2  B4  B5  A3  B1  C1  C4",
-            "K10 L9  K12 J9  K11 L10 J10 L7",
-            "F14 F15 F13 G16 G15 E12 D13 E13",
-            "D15 E15 D16 E16 C17 B16 D14 B17",
-            "B12 C12 A12 A14 A13 B11 C14 B14"),
-            IOStandard("SSTL15")),
-            # IOStandard("SSTL15_T_DCI")), # Is the _T_DCI suffix required?
+            "L1 L2 K5 J4 K1 L3 J5 K6",
+            "G6 H4 H6 H3 G1 H2 G5 G4",
+            "E2 E3 D4 E5 F4 F3 D1 D3",
+            "A2 B2 B4 B5 A3 B1 C1 C4"),
+            IOStandard("SSTL15_T_DCI")), # Is the _T_DCI suffix required?
         Subsignal("dqs_p",   Pins("K3 J1 E6 A5"), IOStandard("DIFF_SSTL15")),
         Subsignal("dqs_n",   Pins("K2 H1 D5 A4"), IOStandard("DIFF_SSTL15")),
-        Subsignal("clk_p",   Pins("G10 D9"), IOStandard("DIFF_SSTL15")),
-        Subsignal("clk_n",   Pins("F10 D8"), IOStandard("DIFF_SSTL15")),
-        Subsignal("cke",     Pins("D10 C7"), IOStandard("SSTL15")),
-        Subsignal("odt",     Pins("G7 C9"), IOStandard("SSTL15")),
+        Subsignal("clk_p",   Pins("G10"), IOStandard("DIFF_SSTL15")),
+        Subsignal("clk_n",   Pins("F10"), IOStandard("DIFF_SSTL15")),
+        Subsignal("cke",     Pins("D10"), IOStandard("SSTL15")),
+        Subsignal("odt",     Pins("G7"), IOStandard("SSTL15")),
         Subsignal("reset_n", Pins("G17"), IOStandard("LVCMOS15")),
         Misc("SLEW=FAST"),
-        #Misc("VCCAUX_IO=HIGH"),
+        Misc("VCCAUX_IO=HIGH"),
     ),
 ]
 
