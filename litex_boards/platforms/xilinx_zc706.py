@@ -93,7 +93,21 @@ _io = [
     ),
 ]
 
+_usb_uart_pmod_io = [
+    # USB-UART PMOD on J58:
+    # - https://store.digilentinc.com/pmod-usbuart-usb-to-uart-interface/
+    ("usb_uart", 0,
+        Subsignal("tx", Pins("pmoda:1")),
+        Subsignal("rx", Pins("pmoda:2")),
+        IOStandard("LVCMOS33")
+    ),
+]
 
+# Connectors ---------------------------------------------------------------------------------------
+
+_connectors = [
+    ("pmoda", "AJ21 AK21 AB21 AB16 Y20 AA20 AC18 AC19"),
+]
 
 # Platform -----------------------------------------------------------------------------------------
 
@@ -102,7 +116,8 @@ class Platform(XilinxPlatform):
     default_clk_period = 1e9/200e6
 
     def __init__(self, toolchain="vivado"):
-        XilinxPlatform.__init__(self, "xc7z045ffg900-2", _io, toolchain=toolchain)
+        XilinxPlatform.__init__(self, "xc7z045ffg900-2", _io, _connectors, toolchain=toolchain)
+        self.add_extension(_usb_uart_pmod_io)
 
     def create_programmer(self):
         return VivadoProgrammer()

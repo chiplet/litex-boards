@@ -86,7 +86,7 @@ class BaseSoC(SoCCore):
 
 def main():
     from litex.soc.integration.soc import LiteXSoCArgumentParser
-    parser = LiteXSoCArgumentParser(description="LiteX SoC on VC707")
+    parser = LiteXSoCArgumentParser(description="LiteX SoC on ZC706")
     target_group = parser.add_argument_group(title="Target options")
     target_group.add_argument("--build",        action="store_true", help="Build design.")
     target_group.add_argument("--load",         action="store_true", help="Load bitstream.")
